@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".startActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_kaydet"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="Kaydet"
+
+            />
+
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+
+        >
+
+        <EditText
+            android:id="@+id/edit_text_yeni_baslik"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+
+            android:background="@drawable/yeni_not_cerceve"
+            android:hint="Yeni Başlık.."
+            android:paddingLeft="10dp"
+            android:textColorHint="#111"
+            android:textSize="17sp" />
+
+        <Button
+            android:id="@+id/btn_icerigi_sil"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true" />
+
+        <EditText
+            android:id="@+id/edit_text_yeni_icerik"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edit_text_yeni_baslik"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/yeni_not_cerceve"
+            android:hint="Yeni Not İçerik.."
+            android:minHeight="150dp"
+            android:paddingLeft="10dp"
+            android:textColorHint="#111"
+            android:textSize="17sp" />
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/edit_text_yeni_icerik"
+            android:id="@+id/txt_onem"
+            android:background="@drawable/yeni_not_cerceve"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/txt_onem"
+            android:id="@+id/txt_konum"
+            android:background="@drawable/yeni_not_cerceve"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/txt_konum"
+            android:id="@+id/txt_tarih"
+            android:background="@drawable/yeni_not_cerceve"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/txt_tarih"
+            android:id="@+id/txt_saat"
+            android:background="@drawable/yeni_not_cerceve"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_below="@id/txt_saat"
+            android:id="@+id/txt_bildirim"
+            android:background="@drawable/yeni_not_cerceve"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_onem_derecesi"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+
+            android:text="önm" />
+
+        <Button
+            android:id="@+id/btn_konum_sec"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+
+            android:text="knm" />
+
+        <Button
+            android:id="@+id/btn_tarih_sec"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+
+            android:text="trh" />
+
+        <Button
+            android:id="@+id/btn_saat_sec"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+
+            android:text="saat" />
+
+        <Button
+            android:id="@+id/btn_bildirim_sec"
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+
+            android:text="Bldrm" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+<RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/radio_group">
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="Kırmızı(Çok önemli)"
+        android:id="@+id/radio_btn_kirmizi"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/radio_btn_sari"
+        android:text="Sarı (orta)"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:id="@+id/radio_btn_yesil"
+        android:text="yesil (onemsiz)"
+        />
+</RadioGroup>
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="40dp"
+        android:id="@+id/btn_tamam"
+        android:layout_below="@id/radio_group"
+        />
+</RelativeLayout>

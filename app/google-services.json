@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "746171724465",
+    "firebase_url": "https://vera-17492.firebaseio.com",
+    "project_id": "vera-17492",
+    "storage_bucket": "vera-17492.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:746171724465:android:c63c70a43f6d2155",
+        "android_client_info": {
+          "package_name": "com.example.mac.vera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "746171724465-lmo1akh5i7mhs3e0609utart17rtrb5c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mac.vera",
+            "certificate_hash": "6ae5d8db1749e74aab929414f93533974f73b622"
+          }
+        },
+        {
+          "client_id": "746171724465-6eok8bmi45geu1lasa1rodj52f3j67ku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmcJKKQbRlYzXI5H_WmFZpg2aRmmp_vQ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "746171724465-6eok8bmi45geu1lasa1rodj52f3j67ku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
