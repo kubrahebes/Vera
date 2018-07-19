@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotDetayActivity">
+
+
+    <ScrollView
+        android:id="@+id/scrol"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+
+            >
+
+            <TextView
+                android:id="@+id/txt_baslik"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+android:textColor="#292929"
+                android:paddingLeft="10dp"
+                android:textColorHint="#111"
+                android:textSize="17sp" />
+
+
+            <TextView
+                android:id="@+id/txt_icerik"
+                android:textColor="#292929"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_baslik"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="10dp"
+                android:textColorHint="#111"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/image_onem"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/txt_icerik"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/k_r_bayrak"
+                android:visibility="visible"/>
+
+            <TextView
+                android:id="@+id/txt_onem"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txt_icerik"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/image_onem"
+
+                android:layout_toRightOf="@+id/image_onem"
+                android:text="4.Öncelik"
+                android:textColor="#292929"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/image_konum"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/image_onem"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="18dp"
+                android:visibility="visible"
+                android:background="@drawable/konumtur_2" />
+
+            <TextView
+                android:id="@+id/txt_konum"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/image_onem"
+                android:layout_marginTop="18dp"
+                android:layout_toEndOf="@+id/image_konum"
+                android:layout_toRightOf="@+id/image_konum"
+                android:text="İstanbul"
+                android:textColor="#292929"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/image_tarih"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/image_konum"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="18dp"
+                android:visibility="visible"
+                android:background="@drawable/takvimtur" />
+
+            <TextView
+                android:id="@+id/txt_tarih"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txt_konum"
+                android:layout_marginTop="18dp"
+                android:layout_toEndOf="@+id/image_tarih"
+                android:layout_toRightOf="@+id/image_tarih"
+                android:text="18/07/2018"
+                android:textColor="#292929"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/image_saat"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/image_tarih"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="18dp"
+                android:visibility="visible"
+                android:background="@drawable/saattur" />
+
+
+            <TextView
+                android:id="@+id/txt_saat"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txt_tarih"
+
+                android:layout_marginTop="18dp"
+                android:layout_toEndOf="@+id/image_saat"
+                android:layout_toRightOf="@+id/image_saat"
+                android:text="18:22"
+                android:textColor="#292929"
+                android:visibility="visible" />
+
+
+            <ImageView
+                android:id="@+id/image_bildirim"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/image_saat"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:visibility="visible"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/konum_yer" />
+
+
+            <TextView
+                android:id="@+id/txt_bildirim"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txt_saat"
+                android:layout_marginTop="1dp"
+                android:layout_toEndOf="@+id/image_bildirim"
+                android:layout_toRightOf="@+id/image_bildirim"
+                android:text="Konumun Aynı Olması Yeterli"
+                android:textColor="#292929"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

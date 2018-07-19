@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KaydolActivity">
+
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:background="@drawable/yaz_l_logo"
+
+        />
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_below="@id/icon"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edit_text_kullanici_adi"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="49dp"
+
+android:textSize="16sp"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="#bbb"
+
+        android:hint="Kullanıcı Adı"
+        android:paddingLeft="5dp"
+
+        app:met_floatingLabel="highlight"
+        app:met_textColor="#3c3b3b"
+        app:met_textColorHint="#f67148"
+        app:met_underlineColor="#000" />
+
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edit_text_e_posta"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="49dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="0dp"
+        android:backgroundTint="#bbb"
+        android:textSize="16sp"
+        android:layout_below="@id/edit_text_kullanici_adi"
+        android:hint="E-Posta"
+        android:paddingLeft="5dp"
+        app:met_floatingLabel="highlight"
+        app:met_textColor="#3c3b3b"
+        app:met_textColorHint="#f67148"
+        app:met_underlineColor="#000" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edit_text_sifre"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+android:textSize="16sp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="49dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#bbb"
+        android:layout_below="@id/edit_text_e_posta"
+        android:hint="Şifre"
+        android:paddingLeft="5dp"
+        app:met_floatingLabel="highlight"
+        app:met_textColor="#3c3b3b"
+        app:met_textColorHint="#f67148"
+        app:met_underlineColor="#000" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edit_text_sifre_tekrar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="49dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#bbb"
+        android:layout_below="@id/edit_text_sifre"
+        android:hint="Şifre Tekrar"
+        android:paddingLeft="5dp"
+        app:met_floatingLabel="highlight"
+        app:met_textColor="#3c3b3b"
+        app:met_textColorHint="#f67148"
+        app:met_underlineColor="#000" />
+
+    <Button
+        android:layout_width="167dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp"
+        android:background="#666aed"
+        android:layout_height="40dp"
+        android:id="@+id/btn_kaydol"
+        android:text="Kaydol"
+        android:textColor="#fff"
+        android:layout_below="@id/edit_text_sifre_tekrar"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

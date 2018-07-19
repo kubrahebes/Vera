@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:background="@drawable/yaz_l_logo"
+
+        />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/icon">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="76dp">
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edit_text_e_posta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="65dp"
+                android:layout_marginRight="50dp"
+                android:backgroundTint="#bbb"
+                android:hint="E-Posta"
+                android:paddingLeft="5dp"
+
+                android:textSize="16sp"
+                app:met_floatingLabel="highlight"
+                app:met_textColor="#3c3b3b"
+                app:met_textColorHint="#f67148"
+                app:met_underlineColor="#000" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edit_text_sifre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_text_e_posta"
+                android:layout_marginLeft="65dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="#bbb"
+                android:hint="Şifre"
+                android:inputType="textPassword"
+                android:paddingLeft="5dp"
+                android:textSize="16sp"
+                app:met_floatingLabel="highlight"
+                app:met_textColor="#3c3b3b"
+                app:met_textColorHint="#f67148"
+                app:met_underlineColor="#000" />
+
+            <Button
+                android:id="@+id/btn_giris"
+                android:layout_width="167dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/edit_text_sifre"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="65dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="50dp"
+                android:background="@color/colorAccent"
+                android:text="Griş"
+                android:textColor="#fff" />
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_giris"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/txt_kaydol_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="35dp"
+                    android:clickable="true"
+                    android:text="Üyeliğiniz yoksa burdan "
+                    android:textColor="#111"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/btn_kaydol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:layout_toEndOf="@+id/txt_kaydol_text"
+                    android:layout_toRightOf="@+id/txt_kaydol_text"
+                    android:clickable="true"
+                    android:paddingLeft="3dp"
+                    android:text="Kaydola Bilirsiniz."
+                    android:textColor="#f67148"
+                    android:textSize="13sp"
+
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:id="@+id/login_forgot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="15dp"
+                    android:clickable="true"
+                    android:text="Şİfremi Unuttum için"
+                    android:textColor="#111"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/txt_sifre_unuttum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_toEndOf="@+id/login_forgot"
+                    android:layout_toRightOf="@+id/login_forgot"
+                    android:clickable="true"
+                    android:paddingLeft="3dp"
+                    android:text="Tıklayın."
+                    android:textColor="#f67148"
+                    android:textSize="12sp"
+
+                    />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

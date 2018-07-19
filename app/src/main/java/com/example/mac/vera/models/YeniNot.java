@@ -1,35 +1,41 @@
 package com.example.mac.vera.models;
 
 public class YeniNot {
-
+private String Uid;
     private String key;
     private String baslik;
     private String icerik;
     private String onem_renk;
-    private String konum;
+    private Double xKordinat;
+    private Double yKordinat;
     private String tarih;
+    private String konum_name;
     private String saat;
     private String bildirim;
 
-    public YeniNot(String baslik, String icerik, String onem_renk, String konum, String tarih, String saat, String bildirim) {
-        this.baslik = baslik;
-        this.icerik = icerik;
-        this.onem_renk = onem_renk;
-        this.konum = konum;
-        this.tarih = tarih;
-        this.saat = saat;
-        this.bildirim = bildirim;
-    }
-
-    public YeniNot(String key, String baslik, String icerik, String onem_renk, String konum, String tarih, String saat, String bildirim) {
+    public YeniNot(String uid, String key, String baslik, String icerik, String onem_renk, Double xKordinat, Double yKordinat, String tarih, String konum_name, String saat, String bildirim) {
+        Uid = uid;
         this.key = key;
         this.baslik = baslik;
         this.icerik = icerik;
         this.onem_renk = onem_renk;
-        this.konum = konum;
+        this.xKordinat = xKordinat;
+        this.yKordinat = yKordinat;
         this.tarih = tarih;
+        this.konum_name = konum_name;
         this.saat = saat;
         this.bildirim = bildirim;
+    }
+
+    public YeniNot() {
+    }
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
     }
 
     public String getKey() {
@@ -38,9 +44,6 @@ public class YeniNot {
 
     public void setKey(String key) {
         this.key = key;
-    }
-
-    public YeniNot() {
     }
 
     public String getBaslik() {
@@ -67,12 +70,20 @@ public class YeniNot {
         this.onem_renk = onem_renk;
     }
 
-    public String getKonum() {
-        return konum;
+    public Double getxKordinat() {
+        return xKordinat;
     }
 
-    public void setKonum(String konum) {
-        this.konum = konum;
+    public void setxKordinat(Double xKordinat) {
+        this.xKordinat = xKordinat;
+    }
+
+    public Double getyKordinat() {
+        return yKordinat;
+    }
+
+    public void setyKordinat(Double yKordinat) {
+        this.yKordinat = yKordinat;
     }
 
     public String getTarih() {
@@ -81,6 +92,14 @@ public class YeniNot {
 
     public void setTarih(String tarih) {
         this.tarih = tarih;
+    }
+
+    public String getKonum_name() {
+        return konum_name;
+    }
+
+    public void setKonum_name(String konum_name) {
+        this.konum_name = konum_name;
     }
 
     public String getSaat() {

@@ -3,157 +3,248 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".startActivity">
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:orientation="horizontal">
+    <ScrollView
+        android:id="@+id/scrol"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn_kaydet"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:text="Kaydet"
-
-            />
-
-
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-
-        >
-
-        <EditText
-            android:id="@+id/edit_text_yeni_baslik"
-            android:layout_width="250dp"
-            android:layout_height="60dp"
-
-            android:background="@drawable/yeni_not_cerceve"
-            android:hint="Yeni Başlık.."
-            android:paddingLeft="10dp"
-            android:textColorHint="#111"
-            android:textSize="17sp" />
-
-        <Button
-            android:id="@+id/btn_icerigi_sil"
-            android:layout_width="40dp"
-            android:layout_height="35dp"
-            android:layout_alignParentRight="true" />
-
-        <EditText
-            android:id="@+id/edit_text_yeni_icerik"
-            android:layout_width="250dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/edit_text_yeni_baslik"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/yeni_not_cerceve"
-            android:hint="Yeni Not İçerik.."
-            android:minHeight="150dp"
-            android:paddingLeft="10dp"
-            android:textColorHint="#111"
-            android:textSize="17sp" />
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/edit_text_yeni_icerik"
-            android:id="@+id/txt_onem"
-            android:background="@drawable/yeni_not_cerceve"
-            android:visibility="gone"/>
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/txt_onem"
-            android:id="@+id/txt_konum"
-            android:background="@drawable/yeni_not_cerceve"
-            android:visibility="gone"/>
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/txt_konum"
-            android:id="@+id/txt_tarih"
-            android:background="@drawable/yeni_not_cerceve"
-            android:visibility="gone"/>
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/txt_tarih"
-            android:id="@+id/txt_saat"
-            android:background="@drawable/yeni_not_cerceve"
-            android:visibility="gone"/>
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/txt_saat"
-            android:id="@+id/txt_bildirim"
-            android:background="@drawable/yeni_not_cerceve"
-            android:visibility="gone"/>
-    </RelativeLayout>
+            android:layout_marginTop="30dp"
 
+            >
+
+            <EditText
+                android:id="@+id/edit_text_yeni_baslik"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+
+                android:background="@drawable/yeni_not_cerceve"
+                android:hint="Yeni Başlık.."
+                android:paddingLeft="10dp"
+                android:textColorHint="#111"
+                android:textSize="17sp" />
+
+
+            <EditText
+                android:id="@+id/edit_text_yeni_icerik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_text_yeni_baslik"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/yeni_not_cerceve"
+                android:hint="Yeni Not İçerik.."
+                android:minHeight="150dp"
+                android:paddingLeft="10dp"
+                android:textColorHint="#111"
+                android:textSize="17sp" />
+
+            <ImageView
+                android:id="@+id/image_onem"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/edit_text_yeni_icerik"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/k_r_bayrak"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txt_onem"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/edit_text_yeni_icerik"
+                android:layout_marginTop="20dp"
+                android:layout_toEndOf="@+id/image_onem"
+
+                android:layout_toRightOf="@+id/image_onem"
+                android:text="4.Öncelik"
+                android:textColor="#292929"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/image_konum"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/image_onem"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="18dp"
+                android:visibility="gone"
+                android:background="@drawable/konumtur_2" />
+
+            <TextView
+                android:id="@+id/txt_konum"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/image_onem"
+                android:layout_marginTop="18dp"
+                android:layout_toEndOf="@+id/image_konum"
+                android:layout_toRightOf="@+id/image_konum"
+                android:text="İstanbul"
+                android:textColor="#292929"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/image_tarih"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/image_konum"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="18dp"
+                android:visibility="gone"
+                android:background="@drawable/takvimtur" />
+
+            <TextView
+                android:id="@+id/txt_tarih"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txt_konum"
+                android:layout_marginTop="18dp"
+                android:layout_toEndOf="@+id/image_tarih"
+                android:layout_toRightOf="@+id/image_tarih"
+                android:text="18/07/2018"
+                android:textColor="#292929"
+                android:visibility="gone" />
+
+
+            <ImageView
+                android:id="@+id/image_saat"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/image_tarih"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="18dp"
+                android:visibility="gone"
+                android:background="@drawable/saattur" />
+
+
+            <TextView
+                android:id="@+id/txt_saat"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txt_tarih"
+
+                android:layout_marginTop="18dp"
+                android:layout_toEndOf="@+id/image_saat"
+                android:layout_toRightOf="@+id/image_saat"
+                android:text="18:22"
+                android:textColor="#292929"
+                android:visibility="gone" />
+
+
+            <ImageView
+                android:id="@+id/image_bildirim"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_below="@id/image_saat"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="30dp"
+                android:visibility="gone"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/konum_yer" />
+
+
+            <TextView
+                android:id="@+id/txt_bildirim"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:layout_below="@id/txt_saat"
+                android:layout_marginTop="1dp"
+                android:layout_toEndOf="@+id/image_bildirim"
+                android:layout_toRightOf="@+id/image_bildirim"
+                android:text="Konumun Aynı Olması Yeterli"
+                android:textColor="#292929"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_onem_derecesi"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="5dp"
-
-            android:text="önm" />
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bayrak" />
 
         <Button
             android:id="@+id/btn_konum_sec"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
+            android:layout_marginLeft="13dp"
 
-            android:text="knm" />
+            android:background="@drawable/konum_2" />
 
         <Button
             android:id="@+id/btn_tarih_sec"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
-
-            android:text="trh" />
+            android:layout_marginLeft="13dp"
+            android:background="@drawable/takvim" />
 
         <Button
             android:id="@+id/btn_saat_sec"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
+            android:layout_marginLeft="13dp"
 
-            android:text="saat" />
+            android:background="@drawable/saat" />
 
         <Button
             android:id="@+id/btn_bildirim_sec"
-            android:layout_width="60dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
+            android:layout_marginLeft="13dp"
 
-            android:text="Bldrm" />
+            android:background="@drawable/hat_rlatma2" />
+
+        <Button
+            android:id="@+id/btn_kaydet"
+            android:layout_width="38dp"
+
+            android:layout_height="40dp"
+            android:layout_marginLeft="13dp"
+            android:background="@drawable/katman_11"
+
+            />
+
+        <Button
+            android:id="@+id/btn_kaydetme"
+            android:layout_width="38dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/katman_10"
+
+            />
     </LinearLayout>
 
 </RelativeLayout>

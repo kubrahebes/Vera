@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/forgot_logo"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/yaz_l_logo" />
+
+
+    <TextView
+        android:id="@+id/forgot_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgot_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Şifreni mi Unuttun ?"
+        android:textColor="#99ff0004"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgot_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:padding="5dp"
+        android:text="Kaydolurken kullandığın E-Posta Adresini Gir " />
+
+
+    <EditText
+        android:id="@+id/forgot_username"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/forgot_text"
+        android:layout_centerInParent="true"
+
+        android:layout_marginTop="40dp"
+        android:hint="E-Posta Adresi"
+        android:inputType="textEmailAddress"
+        android:padding="10dp" />
+
+    <Button
+        android:id="@+id/forgot_button"
+        android:layout_width="161.5dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forgot_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorPrimaryDark"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.01"
+        android:text="Gönder"
+        android:textColor="#ffffff"
+        android:textSize="17.6sp"
+        android:textStyle="normal"
+
+        />
+</RelativeLayout>

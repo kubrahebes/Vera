@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -48,8 +50,7 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
     String select_location;
     @BindView(R.id.edit_text_yeni_baslik)
     EditText editTextYeniBaslik;
-    @BindView(R.id.btn_icerigi_sil)
-    Button btnIcerigiSil;
+
     @BindView(R.id.btn_onem_derecesi)
     Button btnOnemDerecesi;
     @BindView(R.id.btn_konum_sec)
@@ -78,8 +79,22 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
     TextView txtSaat;
     @BindView(R.id.txt_bildirim)
     TextView txtBildirim;
-
-
+    Double x, y;
+    String uID;
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
+    @BindView(R.id.image_onem)
+    ImageView imageOnem;
+    @BindView(R.id.image_konum)
+    ImageView imageKonum;
+    @BindView(R.id.image_tarih)
+    ImageView imageTarih;
+    @BindView(R.id.image_saat)
+    ImageView imageSaat;
+    @BindView(R.id.image_bildirim)
+    ImageView imageBildirim;
+    @BindView(R.id.btn_kaydetme)
+    Button btnKaydetme;
     private GoogleMap mMap;
     //Button ara;
     EditText search_edt;
@@ -92,25 +107,25 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
         setContentView(R.layout.activity_yeni_not_ekle);
         ButterKnife.bind(this);
 
-       // Intent intent = getIntent();
+        // Intent intent = getIntent();
         //select_location = intent.getStringExtra("select_locasyon");
 
         // Toast.makeText(this, select_location, Toast.LENGTH_SHORT).show();
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("database");
 
-
+        pref = getSharedPreferences("MyPref", 0);
+        editor = pref.edit();
+        uID = pref.getString("uID", null);
+        Toast.makeText(this, uID, Toast.LENGTH_SHORT).show();
     }
 
 
-    @OnClick({R.id.btn_icerigi_sil, R.id.btn_onem_derecesi, R.id.btn_konum_sec, R.id.btn_tarih_sec,
+    @OnClick({R.id.btn_onem_derecesi, R.id.btn_konum_sec, R.id.btn_tarih_sec,
             R.id.btn_bildirim_sec, R.id.btn_saat_sec, R.id.btn_kaydet})
     public void onViewClicked(View view) {
         switch (view.getId()) {
-            case R.id.btn_icerigi_sil:
-                editTextYeniBaslik.setText("");
-                editTextYeniIcerik.setText("");
-                break;
+
             case R.id.btn_onem_derecesi:
                 OnemSec();
                 break;
@@ -153,6 +168,7 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
                 // Toast.makeText(startActivity.this, dayOfMonth + "/" + monthOfYear + "/" + year, Toast.LENGTH_SHORT).show();
                 tarih = dayOfMonth + "/" + monthOfYear + "/" + year;
                 txtTarih.setVisibility(View.VISIBLE);
+                imageTarih.setVisibility(View.VISIBLE);
                 txtTarih.setText(dayOfMonth + "/" + monthOfYear + "/" + year);
                 // TODO Auto-generated method stub
                 // tarihTextView.setText(dayOfMonth + "/" + monthOfYear + "/" + year);//Ayarla butonu tıklandığında textview'a yazdırıyoruz
@@ -180,6 +196,7 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
                 // Toast.makeText(startActivity.this, selectedHour + ":" + selectedMinute, Toast.LENGTH_SHORT).show();
                 saat = selectedHour + ":" + selectedMinute;
                 txtSaat.setVisibility(View.VISIBLE);
+                imageSaat.setVisibility(View.VISIBLE);
                 txtSaat.setText(saat);
                 // saatTextView.setText( selectedHour + ":" + selectedMinute);//Ayarla butonu tıklandığında textview'a yazdırıyoruz
             }
@@ -200,7 +217,7 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setMessage("Senin için En Uygun Bildirim Türünü Seç ");
+        builder.setMessage("Notun için En Uygun Bildirim Türü Hangisi ?");
         builder.setView(subView);
         AlertDialog alertDialog = builder.create();
         radioGroup = subView.findViewById(R.id.radio_group);
@@ -212,6 +229,7 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
                 RadioButton radioButton = subView.findViewById(secilen_radio_btn_id);
                 nbildirim = radioButton.getText().toString();
                 txtBildirim.setVisibility(View.VISIBLE);
+                imageBildirim.setVisibility(View.VISIBLE);
                 txtBildirim.setText(nbildirim);
                 //  Toast.makeText(startActivity.this, secilen_renk, Toast.LENGTH_SHORT).show();
             }
@@ -235,7 +253,7 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
-        builder.setMessage("Notun Önemini İfade Eden Bir Renk Seç  ");
+        builder.setMessage("Notun Önemini Seç ");
         builder.setView(subView);
         AlertDialog alertDialog = builder.create();
         radioGroup = subView.findViewById(R.id.radio_group);
@@ -245,6 +263,7 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
 
                 int secilen_radio_btn_id = radioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = subView.findViewById(secilen_radio_btn_id);
+                imageOnem.setVisibility(View.VISIBLE);
                 secilen_renk = radioButton.getText().toString();
                 // Toast.makeText(startActivity.this, secilen_renk, Toast.LENGTH_SHORT).show();
                 txtOnem.setVisibility(View.VISIBLE);
@@ -322,6 +341,7 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 txtKonum.setVisibility(View.VISIBLE);
+                imageKonum.setVisibility(View.VISIBLE);
                 txtKonum.setText(search_edt.getText().toString());
                 //  mapFragment.onDetach();
 
@@ -379,7 +399,8 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
 
 
             search_locasyon = new LatLng(address.getLatitude(), address.getLongitude());
-
+            x = address.getLatitude();
+            y = address.getLongitude();
             mMap.moveCamera(CameraUpdateFactory.newLatLng(search_locasyon));
             final Marker newMaker = mMap.addMarker(new MarkerOptions().position(search_locasyon).title("deneme"));
 
@@ -406,6 +427,8 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
     }
 
     public void Kaydet() {
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(YeniNotEkleActivity.this);
         builder.setIcon(android.R.drawable.ic_dialog_alert);
         builder.setTitle("Kaydet");
@@ -420,12 +443,22 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
                     Toast.makeText(YeniNotEkleActivity.this, "Bütün Alanları Doldurdugunuzdan Emin Olun !!", Toast.LENGTH_SHORT).show();
                 } else {
                     String key = myRef.child("notlar").push().getKey();
-                    YeniNot not = new YeniNot(key, editTextYeniBaslik.getText().toString(),
-                            editTextYeniIcerik.getText().toString(), secilen_renk, search_locasyon.toString(),
-                            tarih, saat, nbildirim);
+                    YeniNot not = new YeniNot(
+                            uID,
+                            key,
+                            editTextYeniBaslik.getText().toString(),
+                            editTextYeniIcerik.getText().toString(),
+                            secilen_renk,
+                            x,
+                            y,
+                            tarih,
+                            search_edt.getText().toString(),
+                            saat,
+                            nbildirim);
                     myRef.child("notlar").child(key).setValue(not);
-                    Intent intent = new Intent(YeniNotEkleActivity.this, SpleshActivity.class);
+                    Intent intent = new Intent(YeniNotEkleActivity.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }
             }
 
@@ -433,5 +466,10 @@ public class YeniNotEkleActivity extends AppCompatActivity implements OnMapReady
                 .setNegativeButton("Hayır", null)
                 .show();
 
+    }
+
+    @OnClick(R.id.btn_kaydetme)
+    public void onViewClicked() {
+        startActivity(new Intent(YeniNotEkleActivity.this, MainActivity.class));
     }
 }
